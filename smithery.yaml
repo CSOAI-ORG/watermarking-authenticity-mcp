@@ -1,0 +1,8 @@
+name: watermarking-authenticity-mcp
+description: MEOK AI Labs — watermarking authenticity
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/watermarking-authenticity-mcp
+license: MIT
+runtime: python
+entrypoint: server.py
