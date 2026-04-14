@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Watermarking & Content Authenticity MCP — MEOK AI Labs. EU AI Act Article 50 compliance. Nov 2, 2026 deadline."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json, os, hashlib, re, base64
 from datetime import datetime, timezone
 from typing import Optional
@@ -17,22 +22,30 @@ def _rl(c="anon"):
 mcp = FastMCP("watermarking-authenticity", instructions="MEOK AI Labs — EU AI Act Article 50 watermarking compliance. C2PA metadata, content provenance, AI detection.")
 
 @mcp.tool()
-def check_watermark_compliance(content_type: str, has_watermark: bool, has_c2pa: bool, has_disclosure: bool) -> str:
+def check_watermark_compliance(content_type: str, has_watermark: bool, has_c2pa: bool, has_disclosure: bool, api_key: str = "") -> str:
     """Check if AI-generated content meets EU AI Act Article 50 watermarking requirements."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     reqs = {"machine_readable_marking": has_watermark, "c2pa_metadata": has_c2pa, "human_disclosure": has_disclosure}
     compliant = all(reqs.values())
     deadline = datetime(2026, 11, 2, tzinfo=timezone.utc)
     days = (deadline - datetime.now(timezone.utc)).days
-    return json.dumps({"content_type": content_type, "requirements": reqs, "compliant": compliant,
+    return {"content_type": content_type, "requirements": reqs, "compliant": compliant,
         "deadline": "November 2, 2026", "days_remaining": days,
         "article": "EU AI Act Article 50 (Transparency for GPAI systems)",
         "penalty": "EUR 15M or 3% of global turnover",
-        "remediation": [k for k, v in reqs.items() if not v] or ["All requirements met"]}, indent=2)
+        "remediation": [k for k, v in reqs.items() if not v] or ["All requirements met"]}
 
 @mcp.tool()
-def generate_c2pa_manifest(creator: str, content_type: str, ai_model: str = "", description: str = "") -> str:
+def generate_c2pa_manifest(creator: str, content_type: str, ai_model: str = "", description: str = "", api_key: str = "") -> str:
     """Generate C2PA (Content Authenticity Initiative) manifest data for AI-generated content."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     ts = datetime.now(timezone.utc).isoformat()
     manifest = {
@@ -52,11 +65,15 @@ def generate_c2pa_manifest(creator: str, content_type: str, ai_model: str = "", 
         },
         "signature": hashlib.sha256(f"{creator}{ts}{ai_model}".encode()).hexdigest(),
     }
-    return json.dumps(manifest, indent=2)
+    return manifest
 
 @mcp.tool()
-def detect_ai_content(text: str) -> str:
+def detect_ai_content(text: str, api_key: str = "") -> str:
     """Analyze text for AI-generated patterns (perplexity, burstiness, vocabulary distribution)."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     words = text.split()
     unique = len(set(w.lower() for w in words))
@@ -71,17 +88,21 @@ def detect_ai_content(text: str) -> str:
     lengths = [len(s.split()) for s in sentences if s.strip()]
     variance = sum((l - sum(lengths)/max(len(lengths),1))**2 for l in lengths) / max(len(lengths), 1) if lengths else 0
     ai_score = min(1.0, (pattern_count * 0.15) + (1.0 - vocab_ratio) * 0.5 + max(0, 0.5 - variance/100) * 0.35)
-    return json.dumps({
+    return {
         "ai_probability": round(ai_score, 2),
         "classification": "likely_ai" if ai_score > 0.7 else "possibly_ai" if ai_score > 0.4 else "likely_human",
         "indicators": {"vocabulary_diversity": round(vocab_ratio, 2), "pattern_matches": pattern_count,
                       "sentence_variance": round(variance, 1), "word_count": total},
         "eu_ai_act_ref": "Article 50 — Transparency obligations for AI-generated content",
-    }, indent=2)
+    }
 
 @mcp.tool()
-def watermarking_readiness(organization: str, content_types: str = "text,image") -> str:
+def watermarking_readiness(organization: str, content_types: str = "text,image", api_key: str = "") -> str:
     """Assess organization readiness for EU AI Act Article 50 watermarking obligations."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     types = [t.strip() for t in content_types.split(",")]
     deadline = datetime(2026, 11, 2, tzinfo=timezone.utc)
@@ -102,15 +123,19 @@ def watermarking_readiness(organization: str, content_types: str = "text,image")
                 "video": ["Per-frame SynthID", "C2PA video manifest"],
             }.get(ct, ["C2PA metadata"]),
         })
-    return json.dumps({"organization": organization, "deadline": "November 2, 2026", "days_remaining": days,
+    return {"organization": organization, "deadline": "November 2, 2026", "days_remaining": days,
         "urgency": "CRITICAL" if days < 90 else "HIGH" if days < 180 else "MEDIUM",
-        "content_types": checklist, "recommendation": f"{days} days to implement. Start with C2PA metadata (fastest) then add interwoven watermarks."}, indent=2)
+        "content_types": checklist, "recommendation": f"{days} days to implement. Start with C2PA metadata (fastest) then add interwoven watermarks."}
 
 @mcp.tool()
-def get_article_50_timeline() -> str:
+def get_article_50_timeline(api_key: str = "") -> str:
     """Get EU AI Act Article 50 implementation timeline and requirements."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     now = datetime.now(timezone.utc)
-    return json.dumps({
+    return {
         "article": "EU AI Act Article 50 — Transparency Obligations",
         "scope": "GPAI system providers generating synthetic audio, image, video, or text",
         "deadline": "November 2, 2026",
@@ -125,7 +150,7 @@ def get_article_50_timeline() -> str:
         "exemptions": ["Assistive function content", "Substantially human-edited content", "No material alteration"],
         "penalty": "EUR 15M or 3% of global annual turnover (Article 99(4))",
         "standards": ["C2PA (Content Authenticity Initiative)", "ISO/IEC 12927 (AI content provenance)", "ETSI GR SAI 019"],
-    }, indent=2)
+    }
 
 if __name__ == "__main__":
     mcp.run()

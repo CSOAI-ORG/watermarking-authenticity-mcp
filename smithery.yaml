@@ -1,8 +1,57 @@
 name: watermarking-authenticity-mcp
-description: MEOK AI Labs — watermarking authenticity
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/watermarking-authenticity-mcp
-license: MIT
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: check_watermark_compliance
+  description: Check if AI-generated content meets EU AI Act Article 50 watermarking
+    requirements.
+  parameters:
+  - name: content_type
+    type: string
+    required: true
+  - name: has_watermark
+    type: boolean
+    required: true
+  - name: has_c2pa
+    type: boolean
+    required: true
+  - name: has_disclosure
+    type: boolean
+    required: true
+- name: generate_c2pa_manifest
+  description: Generate C2PA (Content Authenticity Initiative) manifest data for AI-generated
+    content.
+  parameters:
+  - name: creator
+    type: string
+    required: true
+  - name: content_type
+    type: string
+    required: true
+  - name: ai_model
+    type: string
+    required: false
+  - name: description
+    type: string
+    required: false
+- name: detect_ai_content
+  description: Analyze text for AI-generated patterns (perplexity, burstiness, vocabulary
+    distribution).
+  parameters:
+  - name: text
+    type: string
+    required: true
+- name: watermarking_readiness
+  description: Assess organization readiness for EU AI Act Article 50 watermarking
+    obligations.
+  parameters:
+  - name: organization
+    type: string
+    required: true
+  - name: content_types
+    type: string
+    required: false
+- name: get_article_50_timeline
+  description: Get EU AI Act Article 50 implementation timeline and requirements.
+  parameters: []
