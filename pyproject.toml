@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/watermarking-authenticity-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+watermarking_authenticity_mcp = "server:main"
