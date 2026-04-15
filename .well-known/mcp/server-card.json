@@ -1,0 +1,58 @@
+{
+  "name": "watermarking-authenticity",
+  "description": "MEOK AI Labs \u2014 EU AI Act Article 50 watermarking compliance. C2PA metadata, content provenance, AI detection.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/watermarking-authenticity-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "check_watermark_compliance",
+      "description": "Check if AI-generated content meets EU AI Act Article 50 watermarking requirements."
+    },
+    {
+      "name": "generate_c2pa_manifest",
+      "description": "Generate C2PA (Content Authenticity Initiative) manifest data for AI-generated content."
+    },
+    {
+      "name": "detect_ai_content",
+      "description": "Analyze text for AI-generated patterns (perplexity, burstiness, vocabulary distribution)."
+    },
+    {
+      "name": "watermarking_readiness",
+      "description": "Assess organization readiness for EU AI Act Article 50 watermarking obligations."
+    },
+    {
+      "name": "get_article_50_timeline",
+      "description": "Get EU AI Act Article 50 implementation timeline and requirements."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Content & Media",
+    "Data & Analytics"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
