@@ -1,6 +1,6 @@
 name: watermarking-authenticity-mcp
-description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
-  \ everyone."
+description: "MEOK AI Labs \u2014 EU AI Act Article 50 watermarking compliance. C2PA\
+  \ metadata, content provenance, AI d"
 version: 1.0.0
 tools:
 - name: check_watermark_compliance
