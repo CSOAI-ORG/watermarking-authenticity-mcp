@@ -1,1 +1,11 @@
-{"name":"watermarking-authenticity-mcp","version":"1.0.0","description":"EU AI Act Article 50 watermarking compliance. C2PA, content provenance, AI detection. Nov 2026 deadline.","author":"MEOK AI Labs","license":"MIT","repository":{"type":"git","url":"https://github.com/CSOAI-ORG/watermarking-authenticity-mcp"}}
+{
+  "name": "watermarking-authenticity-mcp",
+  "version": "1.0.0",
+  "description": "Watermarking Authenticity tools for AI agents. Capabilities: check watermark compliance, generate c2pa manifest, detect ai content. Built by MEOK AI Labs.",
+  "author": "MEOK AI Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/watermarking-authenticity-mcp"
+  }
+}

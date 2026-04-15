@@ -1,6 +1,6 @@
 name: watermarking-authenticity-mcp
-description: "MEOK AI Labs \u2014 EU AI Act Article 50 watermarking compliance. C2PA\
-  \ metadata, content provenance, AI d"
+description: 'Watermarking Authenticity tools for AI agents. Capabilities: check watermark
+  compliance, generate c2pa manifest, detect ai content. Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: check_watermark_compliance
