@@ -1,0 +1,42 @@
+# watermarking-authenticity-mcp
+# Purpose: EU AI Act Article 50 watermarking + C2PA 2.1 content provenance for AI-generated synthetic content.
+# Context: Article 50 enforcement deadline: 2 August 2026 (hard deadline, not delayed by Omnibus). C2PA + invisible watermarking required for multilayer compliance.
+
+## Install
+```bash
+pip install watermarking-authenticity-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations. https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836
+- Enterprise (£1,499/mo): white-label + on-premise. hello@meok.ai
+- All tools accept optional `api_key` parameter.
+
+## Tools (6)
+
+### `check_watermark_compliance(content_type: str, has_watermark: bool, has_c2pa: bool, has_disclosure: bool)`
+Check if AI-generated content meets EU AI Act Article 50 watermarking requirements.
+
+### `generate_c2pa_manifest(creator: str, content_type: str, ai_model: str = "", description: str = "")`
+Generate C2PA 2.1 (Content Authenticity Initiative) manifest data for AI-generated content.
+
+### `list_c2pa_supported_formats((none))`
+List file formats supported by C2PA 2.1 spec for manifest embedding.
+
+### `detect_ai_content(text: str)`
+Analyze text for AI-generated patterns (perplexity, burstiness, vocabulary distribution).
+
+### `watermarking_readiness(organization: str, content_types: str = "text, image")`
+Assess organization readiness for EU AI Act Article 50 watermarking obligations.
+
+### `get_article_50_timeline((none))`
+Get EU AI Act Article 50 implementation timeline and requirements.
+
+## Pairs with
+- `meok-attestation-verify` — public verification of signed certs
+- `meok-attestation-api` (https://meok-attestation-api.vercel.app) — HMAC signing endpoint
+- Other MEOK governance MCPs via `mcp_bridge_call`
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed

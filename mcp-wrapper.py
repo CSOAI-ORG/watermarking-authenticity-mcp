@@ -21,7 +21,7 @@ from server import mcp as mcp_server
 
 
 SERVICE_NAME = os.path.basename(os.getcwd())
-REPO_URL = f"https://github.com/CSOAI-ORG/{SERVICE_NAME}"
+REPO_URL = f"https://github.com/meok-ai-labs/{SERVICE_NAME}"
 
 
 @mcp_server.custom_route("/.well-known/mcp/server-card.json", methods=["GET"])

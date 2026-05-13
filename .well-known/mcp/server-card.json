@@ -6,9 +6,9 @@
   "publisher": {
     "name": "MEOK AI Labs",
     "url": "https://meok.ai",
-    "email": "nicholas@meok.ai"
+    "email": "hello@meok.ai"
   },
-  "repository": "https://github.com/CSOAI-ORG/watermarking-authenticity-mcp",
+  "repository": "https://github.com/meok-ai-labs/watermarking-authenticity-mcp",
   "license": "MIT",
   "transport": [
     "stdio",

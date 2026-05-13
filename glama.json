@@ -3,7 +3,7 @@
   "description": "MEOK AI Labs \u2014 watermarking-authenticity-mcp",
   "vendor": "MEOK AI Labs",
   "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/watermarking-authenticity-mcp",
+  "repository": "https://github.com/meok-ai-labs/watermarking-authenticity-mcp",
   "license": "MIT",
   "runtime": "python",
   "entryPoint": "mcp-wrapper.py"

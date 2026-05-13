@@ -1,0 +1,10 @@
+{
+  "name": "Watermarking & Authenticity",
+  "description": "AI content watermarking per EU AI Act Article 50 requirements",
+  "vendor": "MEOK AI Labs",
+  "sourceUrl": "https://github.com/meok-ai-labs/watermarking-authenticity-mcp",
+  "homepage": "https://meok.ai/mcp/watermarking-authenticity-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "server.py"
+}

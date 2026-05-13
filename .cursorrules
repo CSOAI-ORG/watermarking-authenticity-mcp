@@ -1,0 +1,13 @@
+# Watermarking & Authenticity MCP - Auto-trigger Rules
+
+When the user asks about EU AI Act Article 50 watermarking, C2PA content provenance, AI-generated synthetic content disclosure, deepfake detection, or content authenticity verification, use watermarking-authenticity-mcp tools:
+
+- **check_watermark**: Detect machine-readable AI markers in content
+- **classify_content**: Determine if content is AI-generated (text, image, video, audio)
+- **list_article_50_requirements**: EU AI Act Article 50 transparency duties
+- **embed_watermark**: Add C2PA + invisible watermark to AI output
+- **sign_authenticity_attestation**: HMAC-signed provenance cert (Pro+)
+
+Install: `pip install watermarking-authenticity-mcp`
+
+EU AI Act Article 50 enforcement deadline: **2 August 2026 (hard deadline)**. C2PA spec 2.1 + invisible watermarking required for multilayer compliance.

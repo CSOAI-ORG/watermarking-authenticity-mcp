@@ -1,5 +1,8 @@
 # Watermarking Authenticity
 
+[![PyPI](https://img.shields.io/pypi/v/watermarking-authenticity-mcp)](https://pypi.org/project/watermarking-authenticity-mcp/) [![Python](https://img.shields.io/pypi/pyversions/watermarking-authenticity-mcp)](https://pypi.org/project/watermarking-authenticity-mcp/)
+
+
 > By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs — EU AI Act Article 50 watermarking compliance. C2PA metadata, content provenance, AI detection.
 
 Watermarking & Content Authenticity MCP — MEOK AI Labs. EU AI Act Article 50 compliance. Nov 2, 2026 deadline.
@@ -64,7 +67,7 @@ Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) f
 ## Links
 
 - **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/watermarking-authenticity-mcp](https://github.com/CSOAI-ORG/watermarking-authenticity-mcp)
+- **GitHub**: [meok-ai-labs/watermarking-authenticity-mcp](https://github.com/meok-ai-labs/watermarking-authenticity-mcp)
 - **PyPI**: [pypi.org/project/watermarking-authenticity-mcp](https://pypi.org/project/watermarking-authenticity-mcp/)
 
 ## License
