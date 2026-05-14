@@ -70,3 +70,5 @@ Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) f
 ## License
 
 MIT — MEOK AI Labs
+
+<!-- mcp-name: io.github.CSOAI-ORG/watermarking-authenticity-mcp -->
