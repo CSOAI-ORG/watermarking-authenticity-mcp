@@ -1,58 +1,35 @@
 {
-  "name": "watermarking-authenticity",
-  "description": "MEOK AI Labs \u2014 EU AI Act Article 50 watermarking compliance. C2PA metadata, content provenance, AI detection.",
+  "schema_version": "0.1",
+  "name": "watermarking-authenticity-mcp",
   "version": "1.0.0",
-  "protocol_version": "2025-11-25",
-  "publisher": {
-    "name": "MEOK AI Labs",
-    "url": "https://meok.ai",
-    "email": "hello@meok.ai"
-  },
+  "title": "Watermarking & C2PA",
+  "description": "EU AI Act Article 50 + C2PA 2.1 watermarking. 2 Aug 2026 deadline.",
+  "homepage": "https://meok.ai",
   "repository": "https://github.com/meok-ai-labs/watermarking-authenticity-mcp",
   "license": "MIT",
-  "transport": [
-    "stdio",
-    "streamable-http"
-  ],
-  "authentication": {
-    "type": "api-key",
-    "free_tier": true,
-    "free_limit": "15 calls/day"
+  "author": {
+    "name": "MEOK AI Labs",
+    "email": "hello@meok.ai",
+    "url": "https://meok.ai"
   },
-  "tools": [
-    {
-      "name": "check_watermark_compliance",
-      "description": "Check if AI-generated content meets EU AI Act Article 50 watermarking requirements."
-    },
-    {
-      "name": "generate_c2pa_manifest",
-      "description": "Generate C2PA (Content Authenticity Initiative) manifest data for AI-generated content."
-    },
-    {
-      "name": "detect_ai_content",
-      "description": "Analyze text for AI-generated patterns (perplexity, burstiness, vocabulary distribution)."
-    },
-    {
-      "name": "watermarking_readiness",
-      "description": "Assess organization readiness for EU AI Act Article 50 watermarking obligations."
-    },
-    {
-      "name": "get_article_50_timeline",
-      "description": "Get EU AI Act Article 50 implementation timeline and requirements."
-    }
-  ],
   "categories": [
-    "AI & Machine Learning",
-    "Content & Media",
-    "Data & Analytics"
+    "governance"
   ],
-  "pricing": {
-    "free": {
-      "calls_per_day": 15
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "ai-governance",
+    "compliance",
+    "meok"
+  ],
+  "support_url": "https://github.com/meok-ai-labs",
+  "contact_email": "hello@meok.ai",
+  "endpoints": {
+    "free_tier": {
+      "calls_per_day": 10
     },
-    "pro": {
-      "price": "$29/month",
-      "url": "https://meok.ai/pricing"
-    }
+    "pro": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836",
+    "enterprise": "hello@meok.ai"
   }
 }
