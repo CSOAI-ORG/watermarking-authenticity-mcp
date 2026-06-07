@@ -17,7 +17,7 @@ except ImportError:
             return True, "OK", "pro"
         if _MEOK_API_KEY and api_key and api_key != _MEOK_API_KEY:
             return False, "Invalid API key. Get one at https://meok.ai/api-keys", "free"
-        return True, "OK", "free"
+        return True, "OK, Pro at https://www.csoai.org/checkout", "free"
 
 
 def check_access(api_key: str = ""):
@@ -90,7 +90,7 @@ def check_watermark_compliance(content_type: str, has_watermark: bool, has_c2pa:
     """Check if AI-generated content meets EU AI Act Article 50 watermarking requirements."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"}
 
     if err := _rl(): return err
     reqs = {"machine_readable_marking": has_watermark, "c2pa_metadata": has_c2pa, "human_disclosure": has_disclosure}
@@ -124,7 +124,7 @@ def generate_c2pa_manifest(creator: str, content_type: str, ai_model: str = "", 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"}
 
     if err := _rl(): return err
     ts = datetime.now(timezone.utc).isoformat()
@@ -195,7 +195,7 @@ def list_c2pa_supported_formats(api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"}
     return {
         "spec_version": "C2PA 2.1 (September 2024)",
         "supported_formats": {
@@ -227,7 +227,7 @@ def detect_ai_content(text: str, api_key: str = "") -> str:
     """Analyze text for AI-generated patterns (perplexity, burstiness, vocabulary distribution)."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"}
 
     if err := _rl(): return err
     words = text.split()
@@ -256,7 +256,7 @@ def watermarking_readiness(organization: str, content_types: str = "text,image",
     """Assess organization readiness for EU AI Act Article 50 watermarking obligations."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"}
 
     if err := _rl(): return err
     types = [t.strip() for t in content_types.split(",")]
@@ -287,7 +287,7 @@ def get_article_50_timeline(api_key: str = "") -> str:
     """Get EU AI Act Article 50 implementation timeline and requirements."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"}
 
     now = datetime.now(timezone.utc)
     return {

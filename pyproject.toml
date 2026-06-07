@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 [project]
 name = "watermarking-authenticity-mcp"
 readme = "README.md"
-version = "1.0.3"
+version = "1.2.1"
 description = "Watermarking Authenticity tools for AI agents. Capabilities: check watermark compliance, generate c2pa manifest, detect ai content. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
@@ -19,7 +19,7 @@ classifiers = [
 dependencies = ["mcp>=1.0.0"]
 [project.urls]
 Homepage = "https://meok.ai"
-Repository = "https://github.com/meok-ai-labs/watermarking-authenticity-mcp"
+Repository = "https://github.com/CSOAI-ORG/watermarking-authenticity-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]

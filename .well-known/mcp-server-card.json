@@ -1,0 +1,31 @@
+{
+  "name": "watermarking-authenticity-mcp",
+  "title": "Watermarking Authenticity Mcp",
+  "description": "Watermarking Authenticity tools for AI agents. Capabilities: check watermark compliance, generate c2pa manifest, detect ai content. Built by MEOK AI Labs.",
+  "version": "1.2.1",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "check_watermark_compliance"
+    },
+    {
+      "name": "generate_c2pa_manifest"
+    },
+    {
+      "name": "list_c2pa_supported_formats"
+    },
+    {
+      "name": "detect_ai_content"
+    },
+    {
+      "name": "watermarking_readiness"
+    },
+    {
+      "name": "get_article_50_timeline"
+    }
+  ]
+}
