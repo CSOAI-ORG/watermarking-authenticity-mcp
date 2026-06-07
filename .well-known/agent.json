@@ -1,0 +1,77 @@
+{
+  "name": "watermarking-authenticity-mcp",
+  "description": "EU AI Act Article 50 watermarking + C2PA 2.1 compliance. NEW: 2 December 2026 deadline (compress...",
+  "url": "https://proofof.ai/scorecard/watermarking-authenticity-mcp.html",
+  "version": "1.2.1",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "check_watermark_compliance",
+      "name": "Check Watermark Compliance",
+      "description": "check_watermark_compliance via watermarking-authenticity-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_c2pa_manifest",
+      "name": "Generate C2Pa Manifest",
+      "description": "generate_c2pa_manifest via watermarking-authenticity-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "list_c2pa_supported_formats",
+      "name": "List C2Pa Supported Formats",
+      "description": "list_c2pa_supported_formats via watermarking-authenticity-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "detect_ai_content",
+      "name": "Detect Ai Content",
+      "description": "detect_ai_content via watermarking-authenticity-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "watermarking_readiness",
+      "name": "Watermarking Readiness",
+      "description": "watermarking_readiness via watermarking-authenticity-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_article_50_timeline",
+      "name": "Get Article 50 Timeline",
+      "description": "get_article_50_timeline via watermarking-authenticity-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
