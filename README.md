@@ -51,14 +51,11 @@ This MCP server is built with **EU AI Act compliance** built-in:
 
 Need help getting compliant? **[Book a free 15-min diagnostic →](https://cal.com/csoai/august-audit)**
 
-## 🏢 Enterprise
+## How MEOK charges
 
-Need custom development, SLA guarantees, or white-label deployment?
+MEOK has no subscriptions and no tiers. You pay per job, and only when the agreed artifact has been delivered to you. There is no public price list. See <https://meok.ai/pricing>.
 
-- **Pro:** $99/mo — Full MCP suite + EU AI Act tracking
-- **Enterprise:** $499/mo — Custom dev + SLA + Dedicated support
-
-[View Pricing →](https://councilof.ai/pricing) | [Contact Sales →](mailto:sales@csoai.org)
+This repository's source is MIT-licensed and free to self-host.
 
 ## 🤝 Part of the MEOK Ecosystem
 
@@ -91,7 +88,7 @@ Pair this with the MEOK chain that turns one agent action into ONE signed compli
 5. **a2a-governance-bridge-mcp** — fold N attestations → 1 signed event
 6. **agent-incident-relay-mcp** — broadcast incidents to 5 regimes simultaneously
 
-See [meok.ai/mcp-stack](https://meok.ai/mcp-stack) for the full architecture and [meok.ai/mcp-stack/demo](https://meok.ai/mcp-stack/demo) for the live in-browser demo.
+See [https://meok.ai](https://meok.ai) for the full architecture and [https://meok.ai/demo](https://meok.ai/demo) for the live in-browser demo.
 
 ## License
 
@@ -108,7 +105,6 @@ MIT — MEOK AI Labs
       "name": "Is this MCP server free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The free tier gives you 10 calls per day with no API key required. Pro tier is £79/mo for unlimited calls plus cryptographically signed attestations your auditor can verify independently."
       }
     },
     {
@@ -116,7 +112,6 @@ MIT — MEOK AI Labs
       "name": "How does the signed attestation work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every Pro tier audit produces a HMAC-SHA256 signed certificate with a unique ID and a public verify URL. Your auditor pastes the cert into https://meok-attestation-api.vercel.app/verify and gets an independent valid/invalid response. No contact with MEOK required."
       }
     },
     {
@@ -159,7 +154,7 @@ Part of the MEOK **Governance** pack — designed to work together as a fleet. I
 - **AI Bill of Materials** → `uvx ai-bom-mcp` · [PyPI](https://pypi.org/project/ai-bom-mcp/) · [GitHub](https://github.com/CSOAI-ORG/ai-bom-mcp)
 - **AI Incident Reporting** → `uvx ai-incident-reporting-mcp` · [PyPI](https://pypi.org/project/ai-incident-reporting-mcp/) · [GitHub](https://github.com/CSOAI-ORG/ai-incident-reporting-mcp)
 
-Full catalogue + Anthropic Registry verify links: [meok.ai/anthropic-registry](https://meok.ai/anthropic-registry)
+Full catalogue + Anthropic Registry verify links: [https://meok.ai](https://meok.ai)
 
 
 ## Protocol coverage + Universal PAYG
@@ -183,11 +178,6 @@ and 30+ regulatory frameworks. See the full coverage matrix at [meok.ai/protocol
 | Option | Price | Best for |
 |---|---|---|
 | Self-host (this MCP) | £0 — MIT | Devs |
-| This MCP Starter | £29/mo | One-MCP teams |
-| This MCP Pro | £79/mo | Production + 24h SLA |
-| [Universal PAYG](https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j) | £29/mo + £0.0002/call | Spiky usage across many MCPs |
-| Substrate bundle (this category) | £99-£499/mo | A whole pack |
-| [MEOK Universe](https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j) | £1,499/mo | All 47 MCPs, 500K calls |
 
 Each tier above the free self-host adds HMAC-signed attestations verifiable at
 `verify.meok.ai`. Linux Foundation governance on the A2A spine means EU regulated
@@ -195,20 +185,6 @@ buyers can deploy without vendor-lock-in objections.
 
 <!-- mcp-name: io.github.CSOAI-ORG/watermarking-authenticity-mcp -->
 
-<!-- BUY-LADDER:START -->
-
-## 💸 Try MEOK in 30 seconds — instant buy ladder
-
-| Tier | Price | What you get | Stripe |
-|---|---|---|---|
-| Smoke test | **£1** | Signed sample MCP-Hardening report + Article 50 PDF | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-| Quick Kit | **£9** | EU AI Act Article 50 implementation guide (C2PA + EU-Icon) | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-| Founder Call | **£29** | 30-min 1-on-1 with the founder | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-
-> Refundable. UK Stripe — VAT-clean. Builds on the 81-MCP MEOK fleet.
-> Verify any signed report at <https://meok.ai/verify>.
-
-<!-- BUY-LADDER:END -->
 
 
 
